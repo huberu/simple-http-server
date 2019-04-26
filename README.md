@@ -12,7 +12,7 @@ You can, of course, do this without installing the repo.
 
 	$ cd dir_to_share
 	$ python3 -m http.server 8000
-	Serving HTTP on 0.0.0.0 port 8001 (http://0.0.0.0:8001/) ...
+	Serving HTTP on 0.0.0.0 port 8001 (http://0.0.0.0:800/) ...
 
 However, this repo makes this quicker, easier and more robust. The repo deals with some buggy behaviour of HTTPServer in Python standard lib. The issue is that Chrome pre-opens sockets and causes the server to hang until the request is made. This repo also adds a convenience feature of auto-opening the file server through the webbrowser module of Python standard lib.
 
