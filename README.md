@@ -17,7 +17,7 @@ Make the file executable
 
 Move the file to /usr/local/bin
 
-	$ mv simple-http-server/server /usr/local/bin
+	$ sudo mv simple-http-server/server /usr/local/bin
 
 Change directory to the desired location where you want to share files from, and run the server command
 
