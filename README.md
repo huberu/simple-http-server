@@ -14,7 +14,7 @@ You can, of course, do this without installing the repo.
 	$ python3 -m http.server 8000
 	Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
-However, this repo makes this quicker, easier and more robust. The repo deals with some buggy behaviour of HTTPServer in Python standard lib. The issue is that Chrome pre-opens sockets and causes the server to hang until the request is made. This repo also adds a convenience feature of auto-opening the file server through the webbrowser module of Python standard lib.
+However, this repo makes this quicker, easier and more robust. The repo deals with some buggy behaviour of HTTPServer in Python standard lib. The issue is that Chrome pre-opens sockets and causes the server to hang until the request is made (prevents two devices from accessing the file server). This repo also adds a convenience feature of auto-opening the file server through the webbrowser module of Python standard lib.
 
 The instructions below create an execuatable Python file that lives in /usr/local/bin, so you can quickly get a local fileserver up and running by simply changing directory and typing "server". That's it!
 
