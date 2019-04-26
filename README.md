@@ -32,6 +32,8 @@ Move the file to /usr/local/bin
 
 Change directory to the desired location where you want to share files from, and run the server command
 
-	$ cd files-to-share	
+	$ cd dir_to_share
 	$ server
-	Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+	Serving on ip 192.168.1.19:8000
+	192.168.1.19 - - [26/Apr/2019 11:42:36] "GET / HTTP/1.1" 200 -
+	Opening in existing browser session.
