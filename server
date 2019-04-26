@@ -7,12 +7,12 @@ from threading import Thread
 from socketserver import ThreadingMixIn
 
 
-# removed the use of webbroswer as it appeared to have buggy behaviour
-# on investigation the behaviour appears to be caused by Chrome pre-opening 
-# sockets, where the HTTPServer would wait indefintely
+# There is an issue using the standard HTTP server, on investigation 
+# the behaviour appears to be caused by Chrome pre-opening 
+# sockets, where the HTTPServer would wait indefintely until the 
+# request was sent.
 # This was fixed in 3.7 through the introduction of ThreadingHTTPServer
-# not sure why but this appears to be fixed using ThreadingMixIn
-
+# Since we use 3.6 the below addresses that fix.
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -23,18 +23,9 @@ class ThreadingHTTPServer(ThreadingMixIn, HTTPServer):
     pass
 
 
-
 def serve_at(ip, port):
     server = ThreadingHTTPServer((ip, port), Handler)
     server.serve_forever()
-
-
-# Thread(target=serve_at, args=["192.168.1.19", 8000]).start()
-
-# def run_server(ip, server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
-#     server_address = (ip, PORT)
-#     httpd = server_class(server_address, handler_class)
-#     httpd.serve_forever()
 
 
 PORT = 8000
@@ -43,12 +34,9 @@ s.connect(("8.8.8.8", 80))
 ip = s.getsockname()[0]
 s.close()
 
-ip_addr = f"{ip}:{PORT}"
-
-print(f"Serving on ip {ip_addr}")
+ip_addr = f"http://{ip}:{PORT}"
+print(f"Serving at: {ip_addr}")
 
 Thread(target=serve_at, args=[ip, PORT]).start()
-
-webbrowser.open(f"http://{ip_addr}")
-
+webbrowser.open(ip_addr)
 
