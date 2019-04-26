@@ -43,10 +43,12 @@ s.connect(("8.8.8.8", 80))
 ip = s.getsockname()[0]
 s.close()
 
-print(f"Serving on ip {ip}:{PORT}")
+ip_addr = f"{ip}:{PORT}"
+
+print(f"Serving on ip {ip_addr}")
 
 Thread(target=serve_at, args=[ip, PORT]).start()
 
-webbrowser.open(f"http://{ip}:{PORT}")
+webbrowser.open(f"http://{ip_addr}")
 
 
