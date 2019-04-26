@@ -5,7 +5,9 @@ An quick and simple way to share files across a network, using Python's built in
 	$ cd dir_to_share
 	$ python3 -m http.server 8000
 
-If you don't think you'll remember this, the instructions below will do the same thing by just typing "server".
+The Python script makes this easier, plus adds a convinience feature of opening the browser for you. It also solves buggy behaviour caused by Chrome pre-opening sockets that cause the http.server to hang until the request is made by the browser.
+
+The instructions below create an execuatable Python file that lives in /usr/local/bin, so you can quickly get a local fileserver up and running by simply changing directory and typing "server". That's it!
 
 Clone the repo: 
 
