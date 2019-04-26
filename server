@@ -1,15 +1,15 @@
 #! /usr/bin/env python3
 
 import socket
-import webbrowser
+# import webbrowser
 from http.server import * 
 
 
 PORT = 8000
 
 
-def run_server(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
-    server_address = ('', PORT)
+def run_server(ip, server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
+    server_address = (ip, PORT)
     httpd = server_class(server_address, handler_class)
     httpd.serve_forever()
 
@@ -19,9 +19,8 @@ s.connect(("8.8.8.8", 80))
 ip = s.getsockname()[0]
 s.close()
 
-
 print(f"Serving on ip {ip}:{PORT}")
-webbrowser.open(f"http://{ip}:{PORT}")
-run_server()
+# webbrowser.open(f"http://{ip}:{PORT}")
+run_server(ip)
 
 
