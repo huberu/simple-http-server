@@ -28,7 +28,7 @@ Make the file executable
 
 Move the file to /usr/local/bin
 
-	$ sudo cp simple-http-server/server /usr/local/bin
+	$ sudo cp simple-http-server/server /usr/local/bin/server
 
 Change directory to the desired location where you want to share files from, and run the server command
 
