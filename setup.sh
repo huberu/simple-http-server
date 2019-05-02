@@ -1,2 +1,2 @@
-sudo chmod +x ./server
-sudo cp ./server /usr/local/bin/server
+sudo chmod +x ./simple-server
+sudo cp ./simple-server /usr/local/bin/simple-server
