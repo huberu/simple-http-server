@@ -2,7 +2,7 @@
 
 A quick and easy way to share files across a network, using Python standard library.
 
-	$ cd dir_to_share
+	$ cd [dir_to_share]
 	$ simple-server
 	Serving on ip 192.168.1.19:31415
 	192.168.1.19 - - [26/Apr/2019 11:42:36] "GET / HTTP/1.1" 200 -
@@ -32,8 +32,8 @@ Move the file to /usr/local/bin
 
 Change directory to the desired location where you want to share files from, and run the server command
 
-	$ cd dir_to_share
-	$ server
+	$ cd [dir_to_share]
+	$ simple-server
 	Serving on ip 192.168.1.19:31415
 	192.168.1.19 - - [26/Apr/2019 11:42:36] "GET / HTTP/1.1" 200 -
 	Opening in existing browser session.
